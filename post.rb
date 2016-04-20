@@ -2,7 +2,7 @@ require 'commonmarker'
 
 class Post
 
-  attr_reader :title, :content, :content_type
+  attr_reader :title, :content, :content_type, :href
 
   def initialize(filename)
     readable = File.open(filename)
@@ -19,6 +19,7 @@ class Post
 
     @content = doc.to_html
     @content_type = :article
+    @href = "posts/#{File.basename(filename, '.md')}.html"
   end
 
 end

@@ -7,6 +7,7 @@ class Document
 
 <head>
   <meta charset="utf-8" />
+  <link rel="canonical" href="https://www.manypjs.com/#{page.href}" />
   <title>
     Many PJs - #{page.title}
   </title>
