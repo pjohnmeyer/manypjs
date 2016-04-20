@@ -6,6 +6,12 @@ class Document
 <html lang="en">
 
 <head>
+  <script type="text/javascript">
+      var host = "manypjs.com";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+          window.location.protocol = "https";
+  </script>
+
   <meta charset="utf-8" />
   <link rel="canonical" href="https://www.manypjs.com/#{page.href}" />
   <title>
