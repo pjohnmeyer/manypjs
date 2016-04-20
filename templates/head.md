@@ -1,3 +1,0 @@
-<!-- Head template -->
-<head>
-</head>
