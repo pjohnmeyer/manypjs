@@ -7,7 +7,7 @@ class Document
 
 <head>
   <script type="text/javascript">
-      var host = "manypjs.com";
+      var host = "www.manypjs.com";
       if ((host == window.location.host) && (window.location.protocol != "https:"))
           window.location.protocol = "https";
   </script>
