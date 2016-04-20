@@ -23,23 +23,22 @@ class Post
 
 end
 
+require 'minitest/autorun'
 
-# require 'minitest/autorun'
+class TestPost < Minitest::Test
 
-# class TestPost < Minitest::Test
+  def test_title
+    post = Post.new('examples/simple_post.md')
+    assert_equal "Post title", post.title
+  end
 
-#   def test_title
-#     post = Post.new('examples/simple_post.md')
-#     assert_equal "Post title", post.title
-#   end
+  def test_body
+    post = Post.new('examples/simple_post.md')
+    pristine = begin File.read 'examples/simple_post.html.approved' rescue '' end
+    File.write 'examples/simple_post.html.approved', post.content
+    assert_equal pristine, post.content, 'simple_post output has changed, diff and commit to approve'
+  end
 
-#   def test_body
-#     post = Post.new('examples/simple_post.md')
-#     pristine = begin File.read 'examples/simple_post.html.approved' rescue '' end
-#     File.write 'examples/simple_post.html.approved', post.content
-#     assert_equal pristine, post.content, 'simple_post output has changed, diff and commit to approve'
-#   end
-
-# end
+end
 
 

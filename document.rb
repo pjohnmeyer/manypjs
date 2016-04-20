@@ -1,13 +1,14 @@
 class Document
 
   def self.from_page(page)
-"""
+<<-HTML
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="utf-8" />
   <title>
-    #{page.title}
+    Many PJs - #{page.title}
   </title>
 </head>
 
@@ -18,17 +19,17 @@ class Document
 </body>
 
 </html>
-"""
+HTML
   end
 
 end
 
-# require 'minitest/autorun'
+require 'minitest/autorun'
 
-# class TestDocument < Minitest::Test
-#   def test_works_with_post
-#     require_relative './post.rb'
-#     post = Post.new('examples/simple_post.md')
-#     Document.from_page(post)
-#   end
-# end
+class TestDocument < Minitest::Test
+  def test_works_with_post
+    require_relative './post.rb'
+    post = Post.new('examples/simple_post.md')
+    Document.from_page(post)
+  end
+end
